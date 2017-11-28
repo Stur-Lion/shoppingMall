@@ -1,0 +1,44 @@
+<%- layout('layout/layout')%>
+
+<div class="ui-slider" id="slider1">
+    <ul class="ui-slider-content" style="width: 300%">
+        <li><span style="background-image:url(http://placeholder.qiniudn.com/640x200)"></span></li>
+        <li><span style="background-image:url(http://placeholder.qiniudn.com/640x200)"></span></li>
+        <li><span style="background-image:url(http://placeholder.qiniudn.com/640x200)"></span></li>
+    </ul>
+</div>
+
+<div class="tabBox">
+    <div class="ui-border-t clearfix tabList">
+    <span class="ui-avatar-tiled tabListLi">
+        <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+    </span>
+    <span class="ui-avatar-tiled tabListLi">
+        <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+    </span>
+    <span class="ui-avatar-tiled tabListLi">
+        <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+    </span>
+    <span class="ui-avatar-tiled tabListLi">
+        <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+    </span>
+    <span class="ui-avatar-tiled tabListLi">
+        <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+    </span>
+        <span class="ui-avatar-tiled tabListLi">
+        <span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span>
+    </span>
+    </div>
+</div>
+
+
+<script>
+    $(function(){
+        var slider = new fz.Scroll('#slider1', {
+            role: 'slider',
+            indicator: true,
+            autoplay: true,
+            interval: 2000
+        });
+    })
+</script>

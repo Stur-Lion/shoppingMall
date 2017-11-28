@@ -1,0 +1,30 @@
+html, body {
+  font-size: 0.4375rem;
+  background-color: #fff; }
+
+.clearfix:after, .clearfix:before {
+  content: '';
+  display: block;
+  height: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden; }
+
+/* Carousel */
+#slider1 {
+  height: 2.8125rem; }
+
+.tabBox {
+  overflow-x: auto; }
+  .tabBox .tabList {
+    height: 2.5rem;
+    width: 150%; }
+  .tabBox .tabListLi {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.3125rem;
+    background: #fff;
+    box-sizing: border-box;
+    float: left; }
+
+/*# sourceMappingURL=front.css.map */

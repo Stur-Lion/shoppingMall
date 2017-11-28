@@ -4,8 +4,10 @@ var userModel = require('../model/user');
 
 /* GET users listing. */
 /* /front */
-router.get('/', function(req, res, next) {
-  res.send('front');
+router.get('/indexList', function(req, res, next) {
+  res.render('front/indexList',{
+
+  })
 });
 
 module.exports = router;
