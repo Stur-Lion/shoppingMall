@@ -1,6 +1,8 @@
 html, body {
-  font-size: 0.4375rem;
   background-color: #fff; }
+
+body {
+  font-size: 0.4375rem !important; }
 
 .clearfix:after, .clearfix:before {
   content: '';
@@ -9,6 +11,10 @@ html, body {
   line-height: 0;
   clear: both;
   visibility: hidden; }
+
+.fonticon {
+  display: inline-block;
+  vertical-align: middle; }
 
 /* Carousel */
 #slider1 {
@@ -26,5 +32,31 @@ html, body {
     background: #fff;
     box-sizing: border-box;
     float: left; }
+
+.listContent .centerText {
+  height: 1.25rem;
+  line-height: 1.25rem;
+  vertical-align: middle;
+  text-align: center;
+  font-weight: 600;
+  border-bottom: 1px solid #f9f9f9;
+  background-color: #f1f1f1; }
+
+.bottomFixTab {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; }
+  .bottomFixTab ul {
+    width: 100%;
+    border-top: 1px solid #f9f9f9; }
+    .bottomFixTab ul li {
+      float: left;
+      width: 25%; }
+      .bottomFixTab ul li img {
+        width: 1.625rem;
+        height: 1.25rem;
+        display: block;
+        margin: 0 auto; }
 
 /*# sourceMappingURL=front.css.map */

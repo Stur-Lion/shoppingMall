@@ -3,8 +3,10 @@
 }
 
 html,body{
-  font-size: pxToRem(28);
   background-color: #fff;
+}
+body{
+  font-size: pxToRem(28)!important;
 }
 .clearfix:after,.clearfix:before{
   content: '';
@@ -13,6 +15,10 @@ html,body{
   line-height: 0;
   clear: both;
   visibility: hidden;
+}
+.fonticon{
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Carousel */
@@ -32,5 +38,36 @@ html,body{
     background: #fff;
     box-sizing: border-box;
     float: left;
+  }
+}
+.listContent{
+  .centerText{
+    height: pxToRem(80);
+    line-height: pxToRem(80);
+    vertical-align: middle;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 1px solid #f9f9f9;
+    background-color: #f1f1f1;
+  }
+}
+.bottomFixTab{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  ul{
+    width: 100%;
+    border-top: 1px solid #f9f9f9;
+    li{
+      float: left;
+      width: 25%;
+      img{
+        width: pxToRem(104);
+        height: pxToRem(80);
+        display: block;
+        margin: 0 auto;
+      }
+    }
   }
 }
