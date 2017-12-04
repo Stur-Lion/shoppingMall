@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var commdity = require('./../model/commodity');
 
 /* GET users listing. */
 /* /backApi */

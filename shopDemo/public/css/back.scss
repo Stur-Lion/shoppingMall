@@ -1,0 +1,25 @@
+@function pxToRem($args) {
+  @return $args/64*1rem;
+}
+
+html,body{
+  background-color: #fff;
+}
+body{
+  font-size: pxToRem(28)!important;
+}
+.clearfix:after,.clearfix:before{
+  content: '';
+  display: block;
+  height: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.fonticon{
+  display: inline-block;
+  vertical-align: middle;
+}
+.modelBox{
+  display: none;
+}
