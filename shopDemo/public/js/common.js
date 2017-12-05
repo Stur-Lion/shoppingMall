@@ -1,27 +1,44 @@
 /* 打开盒子 */
-function showModel(title,content,sureCallback){
-    layer.open({
-        title:title,
-        content: content,
-        area:['600px','400px'],
-        move:false,
-        fix:true
-        ,btn: ['按钮一', '按钮二']
-        ,yes: function(index, layero){
-            if(sureCallback&&typeof sureCallback=='function'){
-                sureCallback()
-            }
-        }
-        ,btn2: function(index, layero){
-
-        }
-        ,cancel: function(){
-
-        }
-    });
+function showModel(content,title){
+    $(content).modal('show')
+    $(content).find('.modal-title').html(title)
 }
 
 /* 关闭弹出框 */
-function closeModel(){
-    layer.closeAll()
+function closeModel(content){
+    $(content).modal('hide')
+}
+
+/* ajax */
+function ajaxrequest(url,data,success,error,before,complete){
+    $.ajax({
+        url:url,
+        dataType:'JSON',
+        type:'POST',
+        data:data,
+        beforeSend:function (res) {
+            if(before &&typeof before==="function"){
+                before(res)
+            }
+        },
+        complete:function (res) {
+            if(complete&&typeof complete==="function"){
+                complete(res,$self)
+            }
+        },
+        success: function(res) {
+            if(success &&typeof success==="function"){
+                if(res.retcode==1){
+                    success(res)
+                }else{
+                    alert(res.info[0])
+                }
+            }
+        },
+        error: function(res) {
+            if(error &&typeof error==="function"){
+                error(res)
+            }
+        }
+    })
 }

@@ -1,0 +1,56 @@
+@charset "UTF-8";
+html, body {
+  background-color: #fff; }
+
+body {
+  font-size: 0.4375rem !important; }
+
+.clearfix:after, .clearfix:before {
+  content: '';
+  display: block;
+  height: 0;
+  line-height: 0;
+  clear: both;
+  visibility: hidden; }
+
+.fonticon {
+  display: inline-block;
+  vertical-align: middle; }
+
+.modelBox {
+  display: none; }
+
+.addImgBox {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background: url(../images/addicon.png) no-repeat center center;
+  background-size: 50px 50px;
+  border: 1px dashed #999999; }
+  .addImgBox .addImg {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    opacity: 0; }
+
+/*表单输入框组*/
+ul.inputList {
+  padding: 20px 15px; }
+  ul.inputList li {
+    min-height: 40px; }
+    ul.inputList li > label {
+      width: 20%;
+      text-align: right;
+      line-height: 40px; }
+    ul.inputList li > div {
+      display: inline-block;
+      width: 79%;
+      padding-left: 10px; }
+      ul.inputList li > div input, ul.inputList li > div select {
+        height: 30px;
+        width: 70%;
+        border: 1px solid #ddd;
+        padding-left: 10px;
+        border-radius: 3px; }
+
+/*# sourceMappingURL=back.css.map */

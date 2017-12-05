@@ -2,9 +2,9 @@
 
 <div class="ui-slider" id="slider1">
     <ul class="ui-slider-content" style="width: 300%">
-        <li><span style="background-image:url(http://placeholder.qiniudn.com/640x200)"></span></li>
-        <li><span style="background-image:url(http://placeholder.qiniudn.com/640x200)"></span></li>
-        <li><span style="background-image:url(http://placeholder.qiniudn.com/640x200)"></span></li>
+        <% for(var i = 0;i < list.length;i++){ %>
+            <li><span style="background-image:url(<%= list[i].avtor %>)"></span></li>
+        <% } %>
     </ul>
 </div>
 

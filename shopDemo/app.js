@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 const engine = require('ejs-mate');
+var busboy = require('connect-busboy');
 
 var back = require('./routes/back');
 var backApi = require('./routes/backApi');
@@ -28,6 +29,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(busboy());
+
 /*后台页面*/
 app.use('/', back);
 /*后台 路由接口*/
@@ -36,6 +39,7 @@ app.use('/backApi', backApi);
 app.use('/front', front);
 /*前端 路由接口*/
 app.use('/frontApi', frontApi);
+
 
 
 // catch 404 and forward to error handler

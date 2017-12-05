@@ -23,3 +23,42 @@ body{
 .modelBox{
   display: none;
 }
+.addImgBox{
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background: url(../images/addicon.png) no-repeat center center;
+  background-size: 50px 50px;
+  border: 1px dashed #999999;
+  .addImg{
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    opacity: 0;
+  }
+}
+
+/*表单输入框组*/
+ul.inputList{
+  padding: 20px 15px;
+  li{
+    min-height: 40px;
+    >label{
+      width: 20%;
+      text-align: right;
+      line-height: 40px;
+    }
+    >div{
+      display: inline-block;
+      width: 79%;
+      padding-left: 10px;
+      input,select{
+        height: 30px;
+        width: 70%;
+        border: 1px solid #ddd;
+        padding-left: 10px;
+        border-radius: 3px;
+      }
+    }
+  }
+}
