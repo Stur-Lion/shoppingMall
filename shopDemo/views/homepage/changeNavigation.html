@@ -1,0 +1,75 @@
+<%- layout('layout/layout')%>
+<div style="padding: 20px 50px">
+    <blockquote class="layui-elem-quote">
+        导航栏管理
+        <button class="layui-btn layui-btn-sm btnAdd" style="float: right;">
+            <i class="layui-icon">&#xe608;</i> 添加
+        </button>
+    </blockquote>
+    <table class="layui-table" id="table">
+        <colgroup>
+            <col width="100">
+            <col width="300">
+            <col width="250">
+            <col width="350">
+            <col width="350">
+        </colgroup>
+        <thead>
+        <tr>
+            <th></th>
+            <th>图片</th>
+            <th>说明</th>
+            <th>时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% for(var i = 0;i < list.length;i++){ %>
+        <tr>
+            <td><%= list[i].orderId %></td>
+            <td><img src="<%= list[i].avtor %>" alt=""/></td>
+            <td><%= list[i].introduce %></td>
+            <td><%= list[i].time %></td>
+            <td>
+                <button class="layui-btn layui-btn-normal layui-btn-sm">编辑</button>
+                <button class="layui-btn layui-btn-danger layui-btn-sm">删除</button>
+            </td>
+        </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
+<%- partial('component/model/addcarousel.html')%>
+<script>
+    $(function(){
+        $('.btnAdd').on('click',function(){
+            showModel('#addcarousel','添加')
+            $('#addcarousel input').val('')
+            $('.addImgBox').css({'background-image':'url(/images/addicon.png)','background-size':'50px'})
+        })
+        /*添加*/
+        $('.butnSure').on('click',function(){
+            ajaxrequest('/backApi/addNavigation',{
+                logoUrl:$('#fileupload').attr('img'),
+                evelId:$('#evelId').val(),
+                introduce:$('#introduce').val(),
+            },function(res){
+                alert(res.info[0])
+                window.location.reload()
+            },function(res){
+
+            })
+        })
+
+
+        /*上传图片*/
+        $('#fileupload').fileupload({
+            dataType: 'json',
+            done: function (e, data) {
+                console.log(data);
+                $('#fileupload').attr('img',data.result.url)
+                $('.addImgBox').css({'background-image':'url('+data.result.url+')','background-size':'80px'})
+            }
+        });
+    })
+</script>

@@ -13,8 +13,16 @@ router.get('/index', function(req, res, next) {
 });
 /*修改轮播图*/
 router.get('/changeCarousel', function(req, res, next) {
-  commdity.getAllCommdity(function(result){
+  commdity.getAllCommdity({type:'carousel'},function(result){
     res.render('homepage/changeCarousel',{
+      list:result
+    })
+  })
+});
+
+router.get('/changeNavigation', function(req, res, next) {
+  commdity.getAllCommdity({type:'navigation'},function(result){
+    res.render('homepage/changeNavigation',{
       list:result
     })
   })

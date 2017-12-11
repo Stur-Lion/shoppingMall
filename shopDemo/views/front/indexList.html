@@ -2,8 +2,8 @@
 
 <div class="ui-slider" id="slider1">
     <ul class="ui-slider-content" style="width: 300%">
-        <% for(var i = 0;i < list.length;i++){ %>
-            <li><span style="background-image:url(<%= list[i].avtor %>)"></span></li>
+        <% for(var i = 0;i < carousellist.length;i++){ %>
+            <li><span style="background-image:url(<%= carousellist[i].avtor %>)"></span></li>
         <% } %>
     </ul>
 </div>
@@ -66,4 +66,5 @@
             interval: 2000
         });
     })
+    console.log('<%= JSON.stringify(navogationlist) %>');
 </script>

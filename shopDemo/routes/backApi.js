@@ -9,7 +9,7 @@ var common = require('./../commom/common');
 /*添加轮播图*/
 router.post('/addCarousel',function(req, res, next){
   console.log(req.body);
-  commdity.getCount({},function(count){
+  commdity.getCount({type:'carousel'},function(count){
     console.log(count);
     commdity.addCommdity({
       orderId:count+1,
@@ -19,6 +19,32 @@ router.post('/addCarousel',function(req, res, next){
       time:common.curentTime(),
       isDelet:1,
       isUse:1,
+      type:'carousel'
+    },function(err,data){
+      if(err){
+        throw err
+      }else{
+        console.log(data);
+        res.json({retcode:1,info:['添加成功'],data:{}})
+      }
+    })
+  })
+})
+
+/*添加导航栏*/
+router.post('/addNavigation',function(req, res, next){
+  console.log(req.body);
+  commdity.getCount({type:'navigation'},function(count){
+    console.log(count);
+    commdity.addCommdity({
+      orderId:count+1,
+      avtor:req.body.logoUrl,
+      evelId:req.body.evelId,
+      introduce:req.body.introduce,
+      time:common.curentTime(),
+      isDelet:1,
+      isUse:1,
+      type:'navigation'
     },function(err,data){
       if(err){
         throw err
