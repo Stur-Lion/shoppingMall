@@ -23,9 +23,21 @@
 <script>
 export default {
   name: 'HelloWorld',
+  created () {
+    this.getMovie()
+  },
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    getMovie () {
+      this.$http.post('/frontApi', {})
+        .then(res => {
+          console.log(res.data)
+        })
+        .catch(e => console.log(e))
     }
   }
 }
