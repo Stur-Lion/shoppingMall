@@ -31,13 +31,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(busboy());
 
-/*后台页面*/
+/**/
 app.use('/', back);
-/*后台 路由接口*/
+/**/
 app.use('/backApi', backApi);
-/*前端页面*/
+/**/
 app.use('/front', front);
-/*前端 路由接口*/
+/**/
 app.use('/frontApi', frontApi);
 
 
