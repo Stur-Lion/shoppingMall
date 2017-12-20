@@ -1,28 +1,23 @@
 <template>
-  <div class="hello">
+  <div class="one">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'ones',
   created () {
     this.getMovie()
   },
   data () {
     return {
-      msg: 'hello world'
+      msg: 'one'
     }
   },
   methods: {
     getMovie () {
-      this.$http.post('/frontApi', {})
-        .then(res => {
-          console.log(res.data)
-        })
-        .catch(e => console.log(e))
+      console.log('one')
     }
   }
 }

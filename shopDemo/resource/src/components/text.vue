@@ -1,28 +1,25 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <router-link to="/text/admin">跳转admin</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'texts',
   created () {
     this.getMovie()
   },
   data () {
     return {
-      msg: 'hello world'
+      msg: 'text'
     }
   },
   methods: {
     getMovie () {
-      this.$http.post('/frontApi', {})
-        .then(res => {
-          console.log(res.data)
-        })
-        .catch(e => console.log(e))
+      console.log(1)
     }
   }
 }
