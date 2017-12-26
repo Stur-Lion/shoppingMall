@@ -1,30 +1,29 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <div>
-      <router-link to="/">跳转hello</router-link>
-      <router-link to="/text">跳转text</router-link>
-      <router-link to="/duoge">跳转多个</router-link>
+  <div>
+    <div class="carouselbox">
+      <mt-swipe :auto="4000">
+        <mt-swipe-item>1</mt-swipe-item>
+        <mt-swipe-item>2</mt-swipe-item>
+        <mt-swipe-item>3</mt-swipe-item>
+      </mt-swipe>
     </div>
-    <router-view/>
-    <router-view name="left"></router-view>
-    <router-view name="right"></router-view>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  import $ from 'jquery'
+  $(function () {
+    console.log(123)
+  })
+  export default{
+
+  }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  .carouselbox{
+    height: 180px;
+    background: #e5e5e5;
+  }
+</style>
 </style>
