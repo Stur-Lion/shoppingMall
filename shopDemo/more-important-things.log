@@ -1,5 +1,0 @@
-[2017-11-29T21:54:14.946] [ERROR] log_file - GET /frront/indexList
-[2017-11-29T21:54:15.129] [ERROR] log_file - GET /favicon.ico
-[2017-11-29T21:55:09.738] [ERROR] log_file - GET /front/indexList
-[2017-11-29T21:55:58.979] [INFO] log_file - GET /front/indexList
-[2017-11-29T21:58:02.390] [WARN] log_file - GET /front/indexList
