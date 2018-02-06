@@ -4,7 +4,12 @@ const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
-const logger = require('koa-logger')
+//const logger = require('koa-logger')
+const log4js = require('log4js');
+const logger = log4js.getLogger();
+logger.level = 'debug';
+logger.debug("Some debug messages");
+global.logger = logger;
 
 const index = require('./routes/index')
 const users = require('./routes/users')
@@ -17,11 +22,11 @@ app.use(bodyparser({
   enableTypes:['json', 'form', 'text']
 }))
 app.use(json())
-app.use(logger())
+//app.use(logger())
 app.use(require('koa-static')(__dirname + '/public'))
 
 app.use(views(__dirname + '/views', {
-  extension: 'pug'
+  extension: 'ejs'
 }))
 
 // logger
