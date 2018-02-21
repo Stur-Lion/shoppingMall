@@ -1,4 +1,4 @@
-# views
+# shop
 
 > A Vue.js project
 
