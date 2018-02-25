@@ -1,0 +1,62 @@
+<template>
+  <div>
+    <ul class="fixTab">
+      <li class="active">
+        <i class="iconfont icon-shouye"></i>
+        <p>首页</p>
+      </li>
+      <li>
+        <i class="iconfont icon-icon--"></i>
+        <p>分类</p>
+      </li>
+      <li>
+        <i class="iconfont icon-gouwuche"></i>
+        <p>购物车</p>
+      </li>
+      <li>
+        <i class="iconfont icon-wode"></i>
+        <p>我的</p>
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'BottomfixTab',
+  data () {
+    return {
+
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style lang="scss" type="text/scss" scoped>
+.fixTab{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 0;
+  background-color: rgba(239, 239, 239, 0.53);
+  padding: 10px 0 0 0;
+  border-top: 1px solid rgba(188, 188, 188, 0.54);
+  li{
+    display: inline-block;
+    width: 25%;
+    font-size: 12px;
+    &.active{
+      color: red;
+    }
+    i{
+      display: block;
+      font-size: 45px;
+    }
+    p{
+      line-height: 40px;
+    }
+  }
+}
+</style>

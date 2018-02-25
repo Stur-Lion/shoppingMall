@@ -16,60 +16,82 @@
     <div class="swiperBox">
       <mt-swipe :auto="2000" class="swiper">
         <mt-swipe-item>
-          <img src="../assets/news-banner1.jpg" alt="">
+          <img src="/static/banner/news-banner1.jpg" alt="">
         </mt-swipe-item>
         <mt-swipe-item>
-          <img src="../assets/news-banner2.jpg" alt="">
+          <img src="/static/banner/news-banner2.jpg" alt="">
         </mt-swipe-item>
         <mt-swipe-item>
-          <img src="../assets/news-banner3.jpg" alt="">
+          <img src="/static/banner/news-banner3.jpg" alt="">
         </mt-swipe-item>
       </mt-swipe>
     </div>
+    <div class="tabBox">
+      <ul>
+        <li v-for="(item , index) in tabData" :key="index">
+          <img :src="'/static/tablogo/'+item.url" :alt="item.name">
+          <p>{{item.name}}</p>
+        </li>
+      </ul>
+    </div>
+    <BottomfixTab></BottomfixTab>
   </div>
 </template>
 
 <script>
+import BottomfixTab from '@/components/BottomfixTab'
 export default {
-  name: 'HelloWorld',
+  name: 'index',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
+      defaultClass: 'iconfont',
       tabData: [
         {
           name: '每日签到',
-          url: 'icon-qiandao'
+          url: 'qiandao.png'
+        },
+        {
+          name: '限时抢购',
+          url: 'xianshiqianggou.png'
         },
         {
           name: '会员专享',
-          url: 'icon-huiyuan'
+          url: 'huiyuan.png'
         },
         {
-          name: '我的手机',
-          url: 'icon-shouji'
+          name: '好货拼团',
+          url: 'haohuo.png'
         },
         {
           name: '分享领券',
-          url: 'icon-shared'
+          url: 'fenxiang.png'
         },
         {
           name: '手机充值',
-          url: 'icon-shouji'
+          url: 'shoujichongzhi.png'
         },
         {
           name: '金融理财',
-          url: 'icon-xianbanshense-'
+          url: 'jinronglicai.png'
         },
         {
-          name: '电商数据',
-          url: 'icon-kujialeqiyezhan_dianshangshujuhutong'
+          name: '电器商城',
+          url: 'dianqi.png'
         },
         {
           name: '萌宝超市',
-          url: 'icon-sekuaichaoshi'
+          url: 'mengbaochaoshi.png'
+        },
+        {
+          name: '个人中心',
+          url: 'gerenzhongxin.png'
         }
       ]
     }
+  },
+  components: {
+    BottomfixTab
   }
 }
 </script>
@@ -131,6 +153,23 @@ export default {
       display: inline-block;
       width: 100%;
       height: 100%;
+    }
+  }
+  .tabBox{
+    padding: 20px 10px;
+    ul{
+      li{
+        display: inline-block;
+        width: 20%;
+        padding-top: 20px;
+        img{
+          display: inline-block;
+          width: 40%;
+        }
+        p{
+          line-height: 60px;
+        }
+      }
     }
   }
 </style>
