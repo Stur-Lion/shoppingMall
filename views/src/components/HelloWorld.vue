@@ -34,14 +34,48 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      tabData: [
+        {
+          name: '每日签到',
+          url: 'icon-qiandao'
+        },
+        {
+          name: '会员专享',
+          url: 'icon-huiyuan'
+        },
+        {
+          name: '我的手机',
+          url: 'icon-shouji'
+        },
+        {
+          name: '分享领券',
+          url: 'icon-shared'
+        },
+        {
+          name: '手机充值',
+          url: 'icon-shouji'
+        },
+        {
+          name: '金融理财',
+          url: 'icon-xianbanshense-'
+        },
+        {
+          name: '电商数据',
+          url: 'icon-kujialeqiyezhan_dianshangshujuhutong'
+        },
+        {
+          name: '萌宝超市',
+          url: 'icon-sekuaichaoshi'
+        }
+      ]
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss" type="text/scss" scoped>
   .headerFix{
     width: 100%;
     position: fixed;
