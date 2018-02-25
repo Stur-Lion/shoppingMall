@@ -1,13 +1,26 @@
-const router = require('koa-router')()
+const router = require('koa-router')();
+const fs = require('fs');
 
-router.post('/hah', async (ctx, next) => {
-  ctx.body = 'koa2 string'
+router.post('/indexPushMessage', async (ctx, next) => {
+    console.log(1);
+    var postHtml = await readFile('indexPushMessage.json')
+    console.log(postHtml);
+    ctx.body = postHtml;
 })
 
-router.get('/json', async (ctx, next) => {
-  ctx.body = {
-    title: 'koa2 json'
-  }
-})
+async function readFile(flename) {
+    return new Promise((resolve,reject)=>{
+        console.log('./postjson/' + flename);
+        fs.readFile('./postjson/'+flename, function(err, data){
+            if(err){
+                reject(err)
+            }else{
+                resolve(data.toString())
+            }
+        });
+    })
+}
+
+
 
 module.exports = router

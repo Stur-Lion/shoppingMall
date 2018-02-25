@@ -8,14 +8,17 @@ import './assets/base.css'
 import './assets/icon/iconfont.css'
 import router from './router'
 import 'lib-flexible'
+import axios from '../node_modules/axios'
 
 Vue.config.productionTip = false
 Vue.use(MintUI)
+Vue.prototype.axios = axios
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  axios,
   components: { App },
   template: '<App/>'
 })

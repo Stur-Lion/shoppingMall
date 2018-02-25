@@ -34,6 +34,19 @@
         </li>
       </ul>
     </div>
+    <div class="pushMessage">
+      <!--精選 SelectedSpecialty-->
+      <div class="SelectedSpecialty" v-if="pushMessage!=''">
+        <img :src="'/static/pushmessage/'+pushMessage.SelectedSpecialty.boundary" class="titleLogo">
+        <div class="SelectedSpecialtybanner">
+          <ul class="pushBanner">
+            <li v-for="(item,index) in pushMessage.SelectedSpecialty.SelectedSpecialtyArr" :key="index">
+              <img :src="'/static/pushmessage/'+item" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <BottomfixTab></BottomfixTab>
   </div>
 </template>
@@ -87,11 +100,23 @@ export default {
           name: '个人中心',
           url: 'gerenzhongxin.png'
         }
-      ]
+      ],
+      pushMessage: ''
     }
   },
   components: {
     BottomfixTab
+  },
+  created () {
+    var that = this
+    this.axios.post('/indexPushMessage', {})
+      .then(function (res) {
+        console.log(res)
+        that.pushMessage = res.data
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
   }
 }
 </script>
@@ -168,6 +193,27 @@ export default {
         }
         p{
           line-height: 60px;
+        }
+      }
+    }
+  }
+  .pushMessage{
+    padding: 0 10px;
+    .titleLogo{
+      width: 100%;
+      height: 100px;
+    }
+    .pushBanner{
+      width: auto;
+      white-space: nowrap;
+      overflow: auto;
+      height: 247px;
+      li{
+        width: 192px;
+        display: inline-block;
+        float: left;
+        img{
+          width: 100%;
         }
       }
     }
