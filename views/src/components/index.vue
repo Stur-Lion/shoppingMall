@@ -157,7 +157,6 @@ export default {
   },
   methods: {
     handleScroll () {
-      console.log(window.scrollY)
       if (window.scrollY < 100) {
         $('#topBac').fadeOut()
       } else {
