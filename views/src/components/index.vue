@@ -45,11 +45,27 @@
             </li>
           </ul>
         </div>
+        <!--家电-->
         <img :src="'/static/pushmessage/'+pushMessage.HomeApplianceSales.boundary" class="boundary">
         <img :src="'/static/pushmessage/'+pushMessage.HomeApplianceSales.titleLogo" class="titleLogo">
         <div class="SelectedSpecialtybanner pushBannerBox">
           <ul class="pushBanner">
             <li v-for="(item,index) in pushMessage.HomeApplianceSales.HomeApplianceSalesArr" :key="index">
+              <img :src="'/static/pushmessage/'+item.url" alt="">
+              <p>{{item.product}}</p>
+              <div>
+                <spsn class="price">￥{{item.price}}</spsn>
+                &nbsp;
+                <del class="costPrice">{{item.costPrice}}</del></div>
+            </li>
+          </ul>
+        </div>
+        <!--时尚女装-->
+        <img :src="'/static/pushmessage/'+pushMessage.fashionWomenClothes.boundary" class="boundary">
+        <img :src="'/static/pushmessage/'+pushMessage.fashionWomenClothes.titleLogo" class="titleLogo">
+        <div class="SelectedSpecialtybanner pushBannerBox">
+          <ul class="pushBanner">
+            <li v-for="(item,index) in pushMessage.fashionWomenClothes.HomeApplianceSalesArr" :key="index">
               <img :src="'/static/pushmessage/'+item.url" alt="">
               <p>{{item.product}}</p>
               <div>

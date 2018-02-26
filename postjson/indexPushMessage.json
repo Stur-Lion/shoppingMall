@@ -51,5 +51,47 @@
                 "costPrice":"56"
             }
         ]
+    },
+    "fashionWomenClothes":{
+        "boundary":"i-i4.png",
+        "titleLogo":"cf-7.jpg",
+        "HomeApplianceSalesArr":[
+            {
+                "url":"sf-25.jpg",
+                "product":"LA 女士宽松毛衣纯色针织衫外套长袖上衣",
+                "price":"13",
+                "costPrice":"56"
+            },
+            {
+                "url":"sf-26.jpg",
+                "product":"FIRSTMIX秋季新款宽松圆领女式针织开衫",
+                "price":"4999",
+                "costPrice":"5699"
+            },
+            {
+                "url":"sf-27.jpg",
+                "product":"maxwin 马威 女式八分袖针织连衣裙",
+                "price":"99",
+                "costPrice":"120"
+            },
+            {
+                "url":"sf-28.jpg",
+                "product":"唯他可可 椰子水饮料 330毫升/盒 12盒",
+                "price":"13",
+                "costPrice":"56"
+            },
+            {
+                "url":"sf-29.jpg",
+                "product":"巴黎水 含气青柠味饮料 330毫升 24",
+                "price":"189",
+                "costPrice":"566"
+            },
+            {
+                "url":"sf-30.jpg",
+                "product":"calbee 卡乐比 日本进口休闲零食佳可比黄油味薯条 90克/盒",
+                "price":"4999",
+                "costPrice":"5699"
+            }
+        ]
     }
 }
