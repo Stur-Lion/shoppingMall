@@ -13,6 +13,7 @@
         </div>
       </div>
     </div>
+    <div id="topBac"></div>
     <div class="swiperBox">
       <mt-swipe :auto="2000" class="swiper">
         <mt-swipe-item>
@@ -35,8 +36,9 @@
       </ul>
     </div>
     <div class="pushMessage">
-      <!--精選 SelectedSpecialty-->
       <div class="SelectedSpecialty" v-if="pushMessage!=''">
+
+        <!--精選 SelectedSpecialty-->
         <img :src="'/static/pushmessage/'+pushMessage.SelectedSpecialty.boundary" class="boundary">
         <div class="SelectedSpecialtybanner pushBannerBox">
           <ul class="pushBanner">
@@ -45,6 +47,7 @@
             </li>
           </ul>
         </div>
+
         <!--家电-->
         <img :src="'/static/pushmessage/'+pushMessage.HomeApplianceSales.boundary" class="boundary">
         <img :src="'/static/pushmessage/'+pushMessage.HomeApplianceSales.titleLogo" class="titleLogo">
@@ -54,12 +57,13 @@
               <img :src="'/static/pushmessage/'+item.url" alt="">
               <p>{{item.product}}</p>
               <div>
-                <spsn class="price">￥{{item.price}}</spsn>
+                <span class="price">￥{{item.price}}</span>
                 &nbsp;
                 <del class="costPrice">{{item.costPrice}}</del></div>
             </li>
           </ul>
         </div>
+
         <!--时尚女装-->
         <img :src="'/static/pushmessage/'+pushMessage.fashionWomenClothes.boundary" class="boundary">
         <img :src="'/static/pushmessage/'+pushMessage.fashionWomenClothes.titleLogo" class="titleLogo">
@@ -69,7 +73,7 @@
               <img :src="'/static/pushmessage/'+item.url" alt="">
               <p>{{item.product}}</p>
               <div>
-                <spsn class="price">￥{{item.price}}</spsn>
+                <span class="price">￥{{item.price}}</span>
                 &nbsp;
                 <del class="costPrice">{{item.costPrice}}</del></div>
             </li>
@@ -147,6 +151,19 @@ export default {
       .catch(function (error) {
         console.log(error)
       })
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll () {
+      console.log(window.scrollY)
+      if (window.scrollY < 100) {
+        $('#topBac').fadeOut()
+      } else {
+        $('#topBac').fadeIn()
+      }
+    }
   }
 }
 </script>
@@ -160,9 +177,18 @@ export default {
     left: 0;
     z-index: 100;
   }
+  #topBac{
+    width: 100%;
+    height: 90px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba(251,55,67,0.8);
+  }
   .header{
     height: 90px;
-    background-color: rgba(255, 0, 0, 0.41);
+    background-color: rgba(0, 0, 0, 0);
     position: relative;
     >div{
       display:inline-block;

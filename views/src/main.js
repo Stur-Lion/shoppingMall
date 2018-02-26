@@ -9,6 +9,7 @@ import './assets/icon/iconfont.css'
 import router from './router'
 import 'lib-flexible'
 import axios from '../node_modules/axios'
+import 'jquery'
 
 Vue.config.productionTip = false
 Vue.use(MintUI)
