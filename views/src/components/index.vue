@@ -52,6 +52,10 @@
             <li v-for="(item,index) in pushMessage.HomeApplianceSales.HomeApplianceSalesArr" :key="index">
               <img :src="'/static/pushmessage/'+item.url" alt="">
               <p>{{item.product}}</p>
+              <div>
+                <spsn class="price">￥{{item.price}}</spsn>
+                &nbsp;
+                <del class="costPrice">{{item.costPrice}}</del></div>
             </li>
           </ul>
         </div>
@@ -220,7 +224,7 @@ export default {
     }
     .pushBannerBox{
       width: 100%;
-      height: 247px;
+      min-height: 247px;
       overflow-x: auto;
       overflow-y: hidden;
       .pushBanner{
@@ -232,6 +236,19 @@ export default {
           margin-right: 24px;
           img{
             width: 100%;
+          }
+          p{
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            padding: 20px 0 5px 0;
+          }
+          .price{
+            color: #e73c3c;
+          }
+          .costPrice{
+            color: #999;
           }
         }
       }
