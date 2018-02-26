@@ -12,7 +12,7 @@ logger.debug("Some debug messages");
 global.logger = logger;
 
 const index = require('./routes/index')
-//const users = require('./routes/users')
+//const users = require('./routes/users');
 
 // error handler
 onerror(app)
