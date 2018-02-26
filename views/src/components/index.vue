@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bodyBox">
     <div class="headerFix">
       <div class="header">
         <div class="leftErCode">
@@ -37,11 +37,21 @@
     <div class="pushMessage">
       <!--精選 SelectedSpecialty-->
       <div class="SelectedSpecialty" v-if="pushMessage!=''">
-        <img :src="'/static/pushmessage/'+pushMessage.SelectedSpecialty.boundary" class="titleLogo">
-        <div class="SelectedSpecialtybanner">
+        <img :src="'/static/pushmessage/'+pushMessage.SelectedSpecialty.boundary" class="boundary">
+        <div class="SelectedSpecialtybanner pushBannerBox">
           <ul class="pushBanner">
             <li v-for="(item,index) in pushMessage.SelectedSpecialty.SelectedSpecialtyArr" :key="index">
               <img :src="'/static/pushmessage/'+item" alt="">
+            </li>
+          </ul>
+        </div>
+        <img :src="'/static/pushmessage/'+pushMessage.HomeApplianceSales.boundary" class="boundary">
+        <img :src="'/static/pushmessage/'+pushMessage.HomeApplianceSales.titleLogo" class="titleLogo">
+        <div class="SelectedSpecialtybanner pushBannerBox">
+          <ul class="pushBanner">
+            <li v-for="(item,index) in pushMessage.HomeApplianceSales.HomeApplianceSalesArr" :key="index">
+              <img :src="'/static/pushmessage/'+item.url" alt="">
+              <p>{{item.product}}</p>
             </li>
           </ul>
         </div>
@@ -199,21 +209,30 @@ export default {
   }
   .pushMessage{
     padding: 0 10px;
-    .titleLogo{
+    .boundary{
       width: 100%;
       height: 100px;
     }
-    .pushBanner{
-      width: auto;
-      white-space: nowrap;
-      overflow: auto;
+    .titleLogo{
+      width: 100%;
+      height: 210px;
+      padding-bottom: 20px;
+    }
+    .pushBannerBox{
+      width: 100%;
       height: 247px;
-      li{
-        width: 192px;
-        display: inline-block;
-        float: left;
-        img{
-          width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      .pushBanner{
+        width: auto;
+        display: flex;
+        justify-content:flex-start;
+        li{
+          min-width: 192px;
+          margin-right: 24px;
+          img{
+            width: 100%;
+          }
         }
       }
     }

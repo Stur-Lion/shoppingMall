@@ -40,7 +40,7 @@ export default {
   left: 0;
   width: 100%;
   font-size: 0;
-  background-color: rgba(239, 239, 239, 0.53);
+  background-color: rgb(254, 254, 254);
   padding: 10px 0 0 0;
   border-top: 1px solid rgba(188, 188, 188, 0.54);
   li{
