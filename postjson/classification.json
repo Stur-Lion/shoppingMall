@@ -2,7 +2,7 @@
     "data":[
         {
             "name":"热门推荐",
-            "titleLogo":"",
+            "titleLogo":"cf-4.jpg",
             "ids":"1",
             "dataArr":[
                 {
@@ -54,7 +54,7 @@
         },
         {
             "name":"美容彩妆",
-            "titleLogo":"",
+            "titleLogo":"cf-8.jpg",
             "ids":"2",
             "dataArr":[
                 {

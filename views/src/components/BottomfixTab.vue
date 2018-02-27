@@ -1,24 +1,22 @@
 <template>
-  <div>
-    <ul class="fixTab" :index="index">
-      <li @click="toLink($event)" linkRouter="/">
-        <i class="iconfont icon-shouye"></i>
-        <p>首页</p>
-      </li>
-      <li @click="toLink($event)" linkRouter="/classification">
-        <i class="iconfont icon-icon--"></i>
-        <p>分类</p>
-      </li>
-      <li @click="toLink($event)" linkRouter="/shoppingCar">
-        <i class="iconfont icon-gouwuche"></i>
-        <p>购物车</p>
-      </li>
-      <li @click="toLink($event)" linkRouter="/myself">
-        <i class="iconfont icon-wode"></i>
-        <p>我的</p>
-      </li>
-    </ul>
-  </div>
+  <ul class="fixTab" :index="index">
+    <li @click="toLink($event)" linkRouter="/">
+      <i class="iconfont icon-shouye"></i>
+      <p>首页</p>
+    </li>
+    <li @click="toLink($event)" linkRouter="/classification">
+      <i class="iconfont icon-icon--"></i>
+      <p>分类</p>
+    </li>
+    <li @click="toLink($event)" linkRouter="/shoppingCar">
+      <i class="iconfont icon-gouwuche"></i>
+      <p>购物车</p>
+    </li>
+    <li @click="toLink($event)" linkRouter="/myself">
+      <i class="iconfont icon-wode"></i>
+      <p>我的</p>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -31,7 +29,6 @@ export default {
   },
   mounted () {
     var index = $('.fixTab').attr('index')
-    console.log(index)
     $('.fixTab li').eq(index - 1).addClass('active').siblings('li').removeClass('active')
   },
   methods: {
