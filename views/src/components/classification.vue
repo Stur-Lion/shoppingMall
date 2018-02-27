@@ -14,6 +14,15 @@ export default {
 
     }
   },
+  created () {
+    this.axios.post('/classification', {})
+      .then(function (res) {
+        console.log(res.data)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  },
   components: {
     BottomfixTab
   }

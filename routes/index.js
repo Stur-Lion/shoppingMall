@@ -7,6 +7,12 @@ router.post('/indexPushMessage', async (ctx, next) => {
     console.log(postHtml);
     ctx.body = postHtml;
 })
+router.post('/classification', async (ctx, next) => {
+    console.log(1);
+    var postHtml = await readFile('classification.json')
+    console.log(postHtml);
+    ctx.body = postHtml;
+})
 
 async function readFile(flename) {
     return new Promise((resolve,reject)=>{
