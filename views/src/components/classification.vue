@@ -25,10 +25,13 @@
       <div class="rightCon">
         <ul>
           <li v-for="(item,index) in classifiData.data" :key="index">
-            <img :src="'/static/classifi/'+item.titleLogo" alt="">
+            <img :src="'/static/classifi/'+(item.titleLogo && item.titleLogo!=''?item.titleLogo:'cf-4.jpg')" alt="">
             <p>{{item.name}}</p>
-            <ul>
-              <li></li>
+            <ul class="imglistBox">
+              <li v-for="(ele,i) in item.dataArr" :key="i">
+                <img :src="'/static/classifi/'+(ele.logoUrl && ele.logoUrl!=''?ele.logoUrl:'x-sf-4.jpg')" alt="">
+                <p>{{ele.name}}</p>
+              </li>
             </ul>
           </li>
         </ul>
@@ -154,16 +157,29 @@ export default {
       width: 604px;
       padding: 10px;
       box-sizing: border-box;
-      li{
-        width: 100%;
-        >img{
+      >ul{
+        >li{
           width: 100%;
-          display: inline-block;
-        }
-        >p{
-          text-align: left;
-          padding-left: 20px;
-          box-sizing: border-box;
+          padding-bottom: 15px;
+          >img{
+            width: 100%;
+            display: inline-block;
+          }
+          >p{
+            text-align: left;
+            padding-left: 15px;
+            line-height: 60px;
+            box-sizing: border-box;
+          }
+          li{
+            width: 33.33%;
+            display: inline-block;
+            padding: 0 30px;
+            box-sizing: border-box;
+            img{
+              width: 100%;
+            }
+          }
         }
       }
     }
