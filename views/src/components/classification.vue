@@ -17,14 +17,14 @@
     <div class="scrollBox" v-if="classifiData!=''">
       <div class="leftTab">
         <ul>
-          <li v-for="(item,index) in classifiData.data" :key="index" :class="index == 0?'active':''" @click="toLi($event)">
+          <li v-for="(item,index) in classifiData.data" :key="index" :class="index == 0?'active':''" @click="toLi($event)" :ids="item.ids">
             {{item.name}}
           </li>
         </ul>
       </div>
       <div class="rightCon">
         <ul>
-          <li v-for="(item,index) in classifiData.data" :key="index">
+          <li v-for="(item,index) in classifiData.data" :key="index" :ids="item.ids">
             <img :src="'/static/classifi/'+(item.titleLogo && item.titleLogo!=''?item.titleLogo:'cf-4.jpg')" alt="">
             <p>{{item.name}}</p>
             <ul class="imglistBox">
@@ -47,12 +47,21 @@ export default {
   name: 'index',
   data () {
     return {
-      classifiData: ''
+      classifiData: '',
+      scrollY: '45'
     }
   },
   methods: {
     toLi (e) {
       $(e.currentTarget).addClass('active').siblings('li').removeClass('active')
+      var ids = $(e.currentTarget).attr('ids')
+      console.log($('.rightCon>ul>li[ids=' + ids + ']').offset().top)
+      var scrollTopData = $('.rightCon>ul>li[ids=' + ids + ']').offset().top - this.scrollY
+      var initScroll = $('.rightCon>ul>li[ids=' + ids + ']').offset().top
+      console.log(scrollTopData)
+      $('.rightCon').animate({scrollTop: scrollTopData}, 200, function () {
+        this.scrollY = initScroll
+      })
     }
   },
   created () {
@@ -141,7 +150,8 @@ export default {
       float: left;
       width: 145px;
       background-color: #f2f4f5;
-      min-height: 100%;
+      height: 100%;
+      overflow-y: auto;
       li{
         height: 96px;
         line-height: 96px;
@@ -157,6 +167,8 @@ export default {
       width: 604px;
       padding: 10px;
       box-sizing: border-box;
+      height: 100%;
+      overflow-y: auto;
       >ul{
         >li{
           width: 100%;
@@ -178,6 +190,9 @@ export default {
             box-sizing: border-box;
             img{
               width: 100%;
+            }
+            p{
+              line-height: 60px;
             }
           }
         }
