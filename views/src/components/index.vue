@@ -81,7 +81,7 @@
         </div>
       </div>
     </div>
-    <BottomfixTab></BottomfixTab>
+    <BottomfixTab index='1'></BottomfixTab>
   </div>
 </template>
 
@@ -145,7 +145,6 @@ export default {
     var that = this
     this.axios.post('/indexPushMessage', {})
       .then(function (res) {
-        console.log(res)
         that.pushMessage = res.data
       })
       .catch(function (error) {
