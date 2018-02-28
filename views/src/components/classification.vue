@@ -23,7 +23,7 @@
         </ul>
       </div>
       <div class="rightCon">
-        <ul>
+        <ul @touchmove="scrollListen($event)" @touchstart="getTopData()">
           <li v-for="(item,index) in classifiData.data" :key="index" :ids="item.ids">
             <img :src="'/static/classifi/'+(item.titleLogo && item.titleLogo!=''?item.titleLogo:'cf-4.jpg')" alt="">
             <p>{{item.name}}</p>
@@ -48,19 +48,35 @@ export default {
   data () {
     return {
       classifiData: '',
-      scrollY: '45'
+      clickFlag: true
     }
   },
   methods: {
     toLi (e) {
+      this.getTopData()
       $(e.currentTarget).addClass('active').siblings('li').removeClass('active')
       var ids = $(e.currentTarget).attr('ids')
-      console.log($('.rightCon>ul>li[ids=' + ids + ']').offset().top)
-      var scrollTopData = $('.rightCon>ul>li[ids=' + ids + ']').offset().top - this.scrollY
-      var initScroll = $('.rightCon>ul>li[ids=' + ids + ']').offset().top
-      console.log(scrollTopData)
-      $('.rightCon').animate({scrollTop: scrollTopData}, 200, function () {
-        this.scrollY = initScroll
+      var scrollY = $('.rightCon>ul>li[ids=' + ids + ']').attr('topN')
+      $('.rightCon').animate({scrollTop: scrollY}, 200)
+    },
+    getTopData () {
+      if (this.clickFlag) {
+        $.each($('.rightCon>ul>li'), function () {
+          $(this).attr('topN', $(this).offset().top - 45)
+        })
+        this.clickFlag = false
+      }
+    },
+    scrollListen (e) {
+      this.getTopData()
+      var scrollNoewY = $('.rightCon').scrollTop()
+      $.each($('.rightCon>ul>li'), function () {
+        var lastY = Number($(this).attr('topN'))
+        var nextY = Number($(this).next('li').attr('topN'))
+        if (scrollNoewY >= lastY && scrollNoewY < nextY) {
+          var ids = $(this).attr('ids')
+          $('.leftTab li[ids=' + ids + ']').addClass('active').siblings('li').removeClass('active')
+        }
       })
     }
   },
@@ -163,11 +179,13 @@ export default {
     }
     .rightCon{
       display: inline-block;
+      font-size: 0;
       float: left;
       width: 604px;
-      padding: 10px;
       box-sizing: border-box;
       height: 100%;
+      padding: 10px;
+      padding-bottom: 0;
       overflow-y: auto;
       >ul{
         >li{
@@ -182,6 +200,7 @@ export default {
             padding-left: 15px;
             line-height: 60px;
             box-sizing: border-box;
+            font-size: 14px;
           }
           li{
             width: 33.33%;
@@ -193,6 +212,7 @@ export default {
             }
             p{
               line-height: 60px;
+              font-size: 12px;
             }
           }
         }
