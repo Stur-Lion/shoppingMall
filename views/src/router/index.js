@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import dell from '@/components/del'
 import api from '@/components/api'
 import index from '@/components/api/index'
 import classification from '@/components/api/classification'
@@ -12,6 +13,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    {
+      path: '/',
+      name: 'dell',
+      component: dell,
+    },
     {
       path: '/api',
       name: 'api',
@@ -47,5 +53,6 @@ export default new Router({
 
       ]
     }
-  ]
+  ],
+  mode:'hash'
 })

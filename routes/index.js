@@ -3,23 +3,19 @@ const fs = require('fs');
 
 router.post('/indexPushMessage', async (ctx, next) => {
     var postHtml = await readFile('indexPushMessage.json')
-    console.log(postHtml);
     ctx.body = postHtml;
 })
 router.post('/classification', async (ctx, next) => {
     var postHtml = await readFile('classification.json')
-    console.log(postHtml);
     ctx.body = postHtml;
 })
 router.post('/maybeyoulike', async (ctx, next) => {
     var postHtml = await readFile('maybeyoulike.json')
-    console.log(postHtml);
     ctx.body = postHtml;
 })
 
 async function readFile(flename) {
     return new Promise((resolve,reject)=>{
-        console.log('./postjson/' + flename);
         fs.readFile('./postjson/'+flename, function(err, data){
             if(err){
                 reject(err)
