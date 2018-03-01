@@ -145,21 +145,21 @@ export default {
     var that = this
     this.axios.post('/indexPushMessage', {})
       .then(function (res) {
-        that.pushMessage = res.data
+        that.pushMessage = res.data;
       })
       .catch(function (error) {
         console.log(error);
       })
   },
   mounted () {
-    window.addEventListener('scroll', this.handleScroll)
+    window.addEventListener('scroll', this.handleScroll);
   },
   methods: {
     handleScroll () {
       if (window.scrollY < 100) {
-        $('#topBac').fadeOut()
+        $('#topBac').fadeOut();
       } else {
-        $('#topBac').fadeIn()
+        $('#topBac').fadeIn();
       }
     }
   }
