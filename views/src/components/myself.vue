@@ -43,6 +43,35 @@
         </div>
       </div>
     </div>
+    <!--我的订单-->
+    <div class="myselfOrder">
+      <div class="allOrder clearfix">
+        <span>我的订单</span>
+        <span>查看全部 <i class="iconfont icon-qianjin"></i></span>
+      </div>
+      <ul class="orderMess">
+        <li>
+          <i class="iconfont icon-daifukuan"></i>
+          <p>待付款</p>
+        </li>
+        <li>
+          <i class="iconfont icon-daifahuo"></i>
+          <p>待发货</p>
+        </li>
+        <li>
+          <i class="iconfont icon-tubiaolunkuo-"></i>
+          <p>待收货</p>
+        </li>
+        <li>
+          <i class="iconfont icon-daipingjia01"></i>
+          <p>待评价</p>
+        </li>
+        <li>
+          <i class="iconfont icon-tuihuobaozhang"></i>
+          <p>退货退款</p>
+        </li>
+      </ul>
+    </div>
     <BottomfixTab index='4'></BottomfixTab>
   </div>
 </template>
@@ -188,6 +217,42 @@ export default {
         }
         div{
           float: right;
+        }
+      }
+    }
+  }
+  .myselfOrder{
+    .allOrder{
+      height: 90px;
+      border-bottom: 1px solid #ccc;
+      padding: 30px;
+      box-sizing: border-box;
+      span:nth-child(1){
+        float: left;
+        font-weight: 700;
+        font-size: 30px;
+      }
+      span:nth-child(2){
+        float: right;
+        i{
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          font-size: 24px;
+        }
+      }
+    }
+    .orderMess{
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-around;
+      li{
+        i{
+          color: red;
+          display: inline-block;
+          width: 64px;
+          height: 64px;
+          font-size: 40px;
         }
       }
     }
