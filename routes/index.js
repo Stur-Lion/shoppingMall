@@ -2,14 +2,17 @@ const router = require('koa-router')();
 const fs = require('fs');
 
 router.post('/indexPushMessage', async (ctx, next) => {
-    console.log(1);
     var postHtml = await readFile('indexPushMessage.json')
     console.log(postHtml);
     ctx.body = postHtml;
 })
 router.post('/classification', async (ctx, next) => {
-    console.log(1);
     var postHtml = await readFile('classification.json')
+    console.log(postHtml);
+    ctx.body = postHtml;
+})
+router.post('/maybeyoulike', async (ctx, next) => {
+    var postHtml = await readFile('maybeyoulike.json')
     console.log(postHtml);
     ctx.body = postHtml;
 })

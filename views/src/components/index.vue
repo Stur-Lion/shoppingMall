@@ -225,7 +225,7 @@ export default {
     top: 0;
     left: 0;
     z-index: 50;
-    background-color: rgba(251,55,67,0.8);
+    background-color: rgb(255, 91, 93);
   }
   .swiperBox {
     height: 375px;

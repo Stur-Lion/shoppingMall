@@ -118,6 +118,19 @@
         </li>
       </ul>
     </div>
+    <!--maybeLike-->
+    <div class="maybeLike">
+      <ul v-if="dataArr!=''">
+        <li v-for="(item , index) in dataArr" :key="index">
+          <img :src="'/static/myselftab/'+item.img" alt="">
+          <p>{{item.constructor}}</p>
+          <div class="priceBox">
+            <span class="price">￥{{item.price}}</span>
+            <del class="costPrice">{{item.costPrice}}</del>
+          </div>
+        </li>
+      </ul>
+    </div>
     <BottomfixTab index='4'></BottomfixTab>
   </div>
 </template>
@@ -128,7 +141,20 @@ export default {
   name: 'index',
   data () {
     return {
+      dataArr:'',
+      titleLogo:""
     }
+  },
+  created () {
+    var that = this
+    this.axios.post('/maybeyoulike', {})
+      .then(function (res) {
+        that.dataArr = res.data.dataArr;
+        that.titleLogo = res.data.titleLogo;
+      })
+      .catch(function (error) {
+        console.log(error);
+      })
   },
   mounted () {
     window.addEventListener('scroll', this.handleScroll);
@@ -207,7 +233,7 @@ export default {
     top: 0;
     left: 0;
     z-index: 50;
-    background-color: rgba(251,55,67,0.8);
+    background-color: rgb(255, 91, 93);
   }
   .personMess{
     height: 290px;
@@ -270,7 +296,7 @@ export default {
   .myselfOrder{
     .allOrder{
       height: 90px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #e2e2e2;
       padding: 30px;
       box-sizing: border-box;
       span:nth-child(1){
@@ -328,6 +354,45 @@ export default {
           display: inline-block;
           width: 64px;
           height: 64px;
+        }
+      }
+    }
+  }
+  .maybeLike{
+    padding: 0 8px;
+    font-size: 0;
+    ul{
+      li{
+        width: 50%;
+        padding: 0 4px 10px 4px;
+        box-sizing: border-box;
+        display: inline-block;
+        img{
+          width: 100%;
+          display: inline-block;
+        }
+        p{
+          font-size: 28px;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          padding: 20px 0 5px 0;
+        }
+        .priceBox{
+          padding-left: 20px;
+          box-sizing: border-box;
+          font-size: 28px;
+          text-align: left;
+          .price{
+            color: #e73c3c;
+            font-size: 32px;
+            padding-left: 20px;
+          }
+          .costPrice{
+            color: #999;
+            padding-left: 20px;
+          }
         }
       }
     }
