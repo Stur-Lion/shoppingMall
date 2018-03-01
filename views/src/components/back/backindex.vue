@@ -1,21 +1,14 @@
 <template>
   <div class="bodyBox">
-    2
-    <BottomfixTab index='3'></BottomfixTab>
+    后台
   </div>
 </template>
 
 <script>
-import BottomfixTab from '@/components/BottomfixTab'
 export default {
   name: 'index',
   data () {
-    return {
-
-    }
-  },
-  components: {
-    BottomfixTab
+    return {}
   }
 }
 </script>

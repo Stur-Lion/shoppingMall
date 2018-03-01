@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import BottomfixTab from '@/components/BottomfixTab'
+import BottomfixTab from '@/components/api/BottomfixTab'
 export default {
   name: 'index',
   data () {

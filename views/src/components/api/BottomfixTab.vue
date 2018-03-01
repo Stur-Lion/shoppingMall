@@ -1,18 +1,18 @@
 <template>
   <ul class="fixTab" :index="index">
-    <li @click="toLink($event)" linkRouter="/">
+    <li @click="toLink($event)" linkRouter="/api/index">
       <i class="iconfont icon-shouye"></i>
       <p>首页</p>
     </li>
-    <li @click="toLink($event)" linkRouter="/classification">
+    <li @click="toLink($event)" linkRouter="/api/classification">
       <i class="iconfont icon-icon--"></i>
       <p>分类</p>
     </li>
-    <li @click="toLink($event)" linkRouter="/shoppingCar">
+    <li @click="toLink($event)" linkRouter="/api/shoppingCar">
       <i class="iconfont icon-gouwuche"></i>
       <p>购物车</p>
     </li>
-    <li @click="toLink($event)" linkRouter="/myself">
+    <li @click="toLink($event)" linkRouter="/api/myself">
       <i class="iconfont icon-wode"></i>
       <p>我的</p>
     </li>
@@ -43,7 +43,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" type="text/scss" scoped>
-.fixTab{
+  .fixTab{
   position: fixed;
   bottom: 0;
   left: 0;
