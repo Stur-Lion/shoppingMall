@@ -6,7 +6,7 @@
           <i class="iconfont icon-fanhui"></i>
         </div>
         <div class="rightMessge">
-          <i class="iconfont icon-62"></i>
+          <i class="iconfont icon-shezhi"></i>
         </div>
       </div>
     </div>
@@ -69,6 +69,52 @@
         <li>
           <i class="iconfont icon-tuihuobaozhang"></i>
           <p>退货退款</p>
+        </li>
+      </ul>
+    </div>
+    <div class="aui-dri"></div>
+    <!--tab-->
+    <div class="myselfTab">
+      <ul class="myselfTabBox">
+        <li>
+          <i class="" style="background-image: url('/static/myselftab/1.jpg')"></i>
+          <p>邀请好友</p>
+        </li>
+        <li>
+          <i class="" style="background-image: url('/static/myselftab/2.jpg')"></i>
+          <p>签到领币</p>
+        </li>
+        <li>
+          <i class="" style="background-image: url('/static/myselftab/3.jpg')"></i>
+          <p>优惠券</p>
+        </li>
+        <li>
+          <i class="" style="background-image: url('/static/myselftab/4.jpg')"></i>
+          <p>我的拼团</p>
+        </li>
+        <li>
+          <i class="" style="background-image: url('/static/myselftab/5.jpg')"></i>
+          <p>商品推手</p>
+        </li>
+        <li>
+          <i class="" style="background-image: url('/static/myselftab/6.jpg')"></i>
+          <p>充值中心</p>
+        </li>
+        <li>
+          <i class="" style="background-image: url('/static/myselftab/7.jpg')"></i>
+          <p>帮助中心</p>
+        </li>
+        <li>
+          <i class="" style="background-image: url('/static/myselftab/8.jpg')"></i>
+          <p>我的问答</p>
+        </li>
+        <li>
+          <i class="" style="background-image: url('/static/myselftab/9.jpg')"></i>
+          <p>我的评价</p>
+        </li>
+        <li>
+          <i class="" style="background-image: url('/static/myselftab/10.jpg')"></i>
+          <p>我的分享</p>
         </li>
       </ul>
     </div>
@@ -247,12 +293,41 @@ export default {
       display: flex;
       justify-content: space-around;
       li{
+        padding: 15px 0;
         i{
           color: red;
           display: inline-block;
           width: 64px;
           height: 64px;
-          font-size: 40px;
+          font-size: 48px;
+        }
+        p{
+          line-height: 50px;
+        }
+      }
+    }
+  }
+  .aui-dri{
+    height: 14px;
+    background-color: #f0f2f5;
+  }
+  .myselfTab{
+    .myselfTabBox{
+      padding: 20px 0;
+      font-size: 0;
+      li{
+        padding: 12px 0;
+        width: 20%;
+        display: inline-block;
+        font-size: 24px;
+        p{
+          line-height: 42px;
+        }
+        i{
+          background-size: 64px;
+          display: inline-block;
+          width: 64px;
+          height: 64px;
         }
       }
     }
