@@ -15,6 +15,15 @@ Vue.config.productionTip = false
 Vue.use(MintUI)
 Vue.prototype.axios = axios
 
+/*重定向路由*/
+router.beforeEach((to, from, next) => {
+  if (to.matched.length ===0) {
+    next('/api/index')
+  } else {
+    next();
+  }
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

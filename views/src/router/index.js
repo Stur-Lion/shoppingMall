@@ -14,13 +14,8 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'dell',
-      component: dell,
-    },
-    {
-      path: '/api',
       name: 'api',
+      path: '/api',
       component: api,
       children:[
         {
