@@ -1,14 +1,12 @@
 <template>
   <div>
-    123123
-    <router-link to="/ceshi/son">点击跳转</router-link>
-    <router-view></router-view>
+    son
   </div>
 </template>
 
 <script>
   export default {
-    name: 'ceshi'
+    name: 'son'
   }
 </script>
 
