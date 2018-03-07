@@ -2,18 +2,21 @@
   <div class="bodyBox">
     <div class="headerFix">
       <div class="header">
-        <div class="leftErCode">
-          <i class="iconfont icon-saoma"></i>
+        <div class="leftErCode" @click="backHistory()">
+          <i class="iconfont icon-fanhui"></i>
         </div>
         <div class="centerSerch">
-          <input type="text">
+          购物车(6)
         </div>
         <div class="rightMessge">
-          <i class="iconfont icon-62"></i>
+          <i class="iconfont icon-xinxi3"></i>
         </div>
       </div>
     </div>
-    <BottomfixTab index='3'></BottomfixTab>
+    <div class="settlementBox">
+      <mt-checklist>
+      </mt-checklist>
+    </div>
   </div>
 </template>
 
@@ -28,6 +31,11 @@ export default {
   },
   components: {
     BottomfixTab
+  },
+  methods:{
+    backHistory:function () {
+      this.$router.go(-1)
+    }
   }
 }
 </script>
@@ -69,17 +77,8 @@ export default {
           width: 100%;
           height: 100%;
           padding: 18px 80px;
-          input{
-            display: inline-block;
-            -moz-border-radius: 40px;
-            -webkit-border-radius: 40px;
-            border-radius: 40px;
-            background-color: white;
-            width: 100%;
-            height: 54px;
-            padding-left: 40px;
-            box-sizing: border-box
-          }
+          line-height: 50px;
+          font-size: 32px;
         }
       }
     }
