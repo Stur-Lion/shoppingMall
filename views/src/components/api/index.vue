@@ -16,14 +16,8 @@
     <div id="topBac"></div>
     <div class="swiperBox">
       <mt-swipe :auto="2000" class="swiper">
-        <mt-swipe-item>
-          <img src="/static/banner/news-banner1.jpg" alt="">
-        </mt-swipe-item>
-        <mt-swipe-item>
-          <img src="/static/banner/news-banner2.jpg" alt="">
-        </mt-swipe-item>
-        <mt-swipe-item>
-          <img src="/static/banner/news-banner3.jpg" alt="">
+        <mt-swipe-item v-for="(item, index) in bannerImg" :key="index">
+          <img :src="item" alt="">
         </mt-swipe-item>
       </mt-swipe>
     </div>
@@ -93,6 +87,11 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App',
       defaultClass: 'iconfont',
+      bannerImg:[
+        '/static/banner/news-banner1.jpg',
+        '/static/banner/news-banner2.jpg',
+        '/static/banner/news-banner3.jpg'
+      ],
       tabData: [
         {
           name: '每日签到',
