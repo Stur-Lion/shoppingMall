@@ -11,6 +11,7 @@ import myself from '@/components/api/myself'
 /*后台*/
 import backindex from '@/components/back/backindex'
 import backUser from '@/components/back/backUser'
+import user from '@/components/back/user'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
           name: 'backUser',
           path: 'backUser',
           component: backUser,
+        },
+        {
+          name: 'user',
+          path: 'user',
+          component: user,
         }
       ]
     }

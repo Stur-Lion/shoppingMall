@@ -24,7 +24,7 @@
                 </el-menu-item-group>
                 <el-submenu index="1-2">
                   <template slot="title">用户管理</template>
-                  <el-menu-item index="1-2-1">用户列表</el-menu-item>
+                  <el-menu-item index="1-2-1" path='/backindex/user'>用户列表</el-menu-item>
                 </el-submenu>
               </el-submenu>
             </el-menu>
@@ -50,16 +50,15 @@
     },
     methods: {
       handleOpen(key, keyPath) {
-        console.log(key, keyPath);
+
       },
       handleClose(key, keyPath) {
-        console.log(key, keyPath);
+
       }
     },
     mounted(){
       var that = this;
       $('.el-menu-item').on('click',function () {
-        console.log(1);
         that.$router.push({path:$(this).attr('path')})
       })
     }
