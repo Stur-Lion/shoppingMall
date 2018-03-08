@@ -1,13 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import dell from '@/components/del'
 import api from '@/components/api'
+
+/*移动端*/
 import index from '@/components/api/index'
 import classification from '@/components/api/classification'
 import shoppingCar from '@/components/api/shoppingCar'
 import myself from '@/components/api/myself'
 
+/*后台*/
 import backindex from '@/components/back/backindex'
+import backUser from '@/components/back/backUser'
 
 Vue.use(Router)
 
@@ -45,7 +48,11 @@ export default new Router({
       name: 'backindex',
       component: backindex,
       children:[
-
+        {
+          name: 'backUser',
+          path: 'backUser',
+          component: backUser,
+        }
       ]
     }
   ],
