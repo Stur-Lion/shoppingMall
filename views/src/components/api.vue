@@ -1,3 +1,4 @@
+<!--移动端layout-->
 <template>
   <router-view/>
 </template>

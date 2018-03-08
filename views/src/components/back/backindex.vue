@@ -1,3 +1,4 @@
+<!--后台管理首页-->
 <template>
   <div style="height: 100%;">
     <div class="topFullColumn"></div>

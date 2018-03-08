@@ -1,3 +1,4 @@
+<!--底部导航-->
 <template>
   <ul class="fixTab" :index="index">
     <li @click="toLink($event)" linkRouter="/api/index">

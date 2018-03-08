@@ -1,3 +1,4 @@
+<!--移动端 / 购物车-->
 <template>
   <div class="bodyBox">
     <div class="headerFix">

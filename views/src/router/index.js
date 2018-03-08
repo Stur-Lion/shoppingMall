@@ -8,7 +8,7 @@ import classification from '@/components/api/classification'
 import shoppingCar from '@/components/api/shoppingCar'
 import myself from '@/components/api/myself'
 
-/*后台*/
+/*后台管理*/
 import backindex from '@/components/back/backindex'
 import backUser from '@/components/back/backUser'
 import user from '@/components/back/user'
@@ -17,6 +17,7 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    /*移动端*/
     {
       name: 'api',
       path: '/api',
@@ -44,6 +45,7 @@ export default new Router({
         }
       ]
     },
+    /*后台管理*/
     {
       path: '/backindex',
       name: 'backindex',
