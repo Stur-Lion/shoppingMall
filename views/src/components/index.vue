@@ -1,4 +1,3 @@
-<!--移动端 / 首页-->
 <template>
   <div class="bodyBox">
     <div class="headerFix">
@@ -17,8 +16,14 @@
     <div id="topBac"></div>
     <div class="swiperBox">
       <mt-swipe :auto="2000" class="swiper">
-        <mt-swipe-item v-for="(item, index) in bannerImg" :key="index">
-          <img :src="item" alt="">
+        <mt-swipe-item>
+          <img src="/static/banner/news-banner1.jpg" alt="">
+        </mt-swipe-item>
+        <mt-swipe-item>
+          <img src="/static/banner/news-banner2.jpg" alt="">
+        </mt-swipe-item>
+        <mt-swipe-item>
+          <img src="/static/banner/news-banner3.jpg" alt="">
         </mt-swipe-item>
       </mt-swipe>
     </div>
@@ -81,18 +86,13 @@
 </template>
 
 <script>
-import BottomfixTab from '@/components/api/BottomfixTab'
+import BottomfixTab from '@/components/BottomfixTab'
 export default {
   name: 'index',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
       defaultClass: 'iconfont',
-      bannerImg:[
-        '/static/banner/news-banner1.jpg',
-        '/static/banner/news-banner2.jpg',
-        '/static/banner/news-banner3.jpg'
-      ],
       tabData: [
         {
           name: '每日签到',
@@ -237,7 +237,6 @@ export default {
   }
   .tabBox{
     padding: 20px 10px;
-    text-align: center;
     ul{
       li{
         display: inline-block;

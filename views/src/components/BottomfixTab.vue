@@ -1,19 +1,18 @@
-<!--底部导航-->
 <template>
   <ul class="fixTab" :index="index">
-    <li @click="toLink($event)" linkRouter="/api/index">
+    <li @click="toLink($event)" linkRouter="/">
       <i class="iconfont icon-shouye"></i>
       <p>首页</p>
     </li>
-    <li @click="toLink($event)" linkRouter="/api/classification">
+    <li @click="toLink($event)" linkRouter="/classification">
       <i class="iconfont icon-icon--"></i>
       <p>分类</p>
     </li>
-    <li @click="toLink($event)" linkRouter="/api/shoppingCar">
+    <li @click="toLink($event)" linkRouter="/shoppingCar">
       <i class="iconfont icon-gouwuche"></i>
       <p>购物车</p>
     </li>
-    <li @click="toLink($event)" linkRouter="/api/myself">
+    <li @click="toLink($event)" linkRouter="/myself">
       <i class="iconfont icon-wode"></i>
       <p>我的</p>
     </li>
@@ -53,7 +52,6 @@ export default {
   background-color: rgb(254, 254, 254);
   padding: 10px 0 0 0;
   border-top: 1px solid rgba(188, 188, 188, 0.54);
-  text-align: center;
   li{
     display: inline-block;
     width: 25%;

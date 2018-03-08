@@ -106,6 +106,24 @@
             </div>
           </div>
         </li>
+        <li>
+          <div>
+            <i class="checkBox iconfont icon-weigouxuan"></i>
+            <img src="/static/shoppingcar/sf-11.jpg" alt="">
+            <div class="witter">
+              <h4>【黑卡96折】Apple 苹果 iPhone 7（A1660）移动联通电信4G手机 国内行货</h4>
+              <div class="configuration">
+                <span>重量:3.3kg</span><span>颜色:标配版</span><span>版本:5.7英寸</span>
+              </div>
+              <div class="bottomChooseBox">
+                <span class="price">￥ 100.00</span>
+                <span class="countBox">
+                  <a href="" class="reduceCount iconfont icon-jian"></a><span class="count">1</span><a href="" class="addCount iconfont icon-jia"></a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
     <div class="settlementBox">
@@ -192,6 +210,7 @@ export default {
           padding: 18px 80px;
           line-height: 50px;
           font-size: 32px;
+          text-align: center;
         }
       }
     }
@@ -208,6 +227,7 @@ export default {
     line-height: 100px;
     box-shadow: 0 0 10PX 0PX rgba(155,143,143,0.6);
     -webkit-box-shadow: 0 0 10PX 0PX rgba(155,143,143,0.6);
+    background: #fff;
     font-size: 28px;
     .countBox{
       color: #da4644;

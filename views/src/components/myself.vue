@@ -1,4 +1,3 @@
-<!--移动端 / 个人中心-->
 <template>
   <div class="bodyBox">
     <div class="headerFix">
@@ -137,7 +136,7 @@
 </template>
 
 <script>
-import BottomfixTab from '@/components/api/BottomfixTab'
+import BottomfixTab from '@/components/BottomfixTab'
 export default {
   name: 'index',
   data () {
@@ -295,7 +294,6 @@ export default {
     }
   }
   .myselfOrder{
-    text-align: center;
     .allOrder{
       height: 90px;
       border-bottom: 1px solid #e2e2e2;
@@ -340,7 +338,6 @@ export default {
     background-color: #f0f2f5;
   }
   .myselfTab{
-    text-align: center;
     .myselfTabBox{
       padding: 20px 0;
       font-size: 0;

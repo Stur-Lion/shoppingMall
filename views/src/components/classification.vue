@@ -1,4 +1,3 @@
-<!--分类-->
 <template>
   <div class="tabBox">
     <div class="headerFix">
@@ -43,7 +42,7 @@
 </template>
 
 <script>
-import BottomfixTab from '@/components/api/BottomfixTab'
+import BottomfixTab from '@/components/BottomfixTab'
 export default {
   name: 'index',
   data () {
@@ -169,7 +168,6 @@ export default {
       background-color: #f2f4f5;
       height: 100%;
       overflow-y: auto;
-      text-align: center;
       li{
         height: 96px;
         line-height: 96px;
@@ -215,7 +213,6 @@ export default {
             p{
               line-height: 60px;
               font-size: 12px;
-              text-align: center;
             }
           }
         }
