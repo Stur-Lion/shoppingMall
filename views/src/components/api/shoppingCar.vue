@@ -13,12 +13,106 @@
         </div>
       </div>
     </div>
+    <div class="contentBox">
+      <ul>
+        <li>
+          <div>
+            <i class="checkBox iconfont icon-weigouxuan"></i>
+            <img src="/static/shoppingcar/sf-11.jpg" alt="">
+            <div class="witter">
+              <h4>【黑卡96折】Apple 苹果 iPhone 7（A1660）移动联通电信4G手机 国内行货</h4>
+              <div class="configuration">
+                <span>重量:3.3kg</span><span>颜色:标配版</span><span>版本:5.7英寸</span>
+              </div>
+              <div class="bottomChooseBox">
+                <span class="price">￥ 100.00</span>
+                <span class="countBox">
+                  <a href="" class="reduceCount iconfont icon-jian"></a><span class="count">1</span><a href="" class="addCount iconfont icon-jia"></a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <i class="checkBox iconfont icon-weigouxuan"></i>
+            <img src="/static/shoppingcar/sf-11.jpg" alt="">
+            <div class="witter">
+              <h4>【黑卡96折】Apple 苹果 iPhone 7（A1660）移动联通电信4G手机 国内行货</h4>
+              <div class="configuration">
+                <span>重量:3.3kg</span><span>颜色:标配版</span><span>版本:5.7英寸</span>
+              </div>
+              <div class="bottomChooseBox">
+                <span class="price">￥ 100.00</span>
+                <span class="countBox">
+                  <a href="" class="reduceCount iconfont icon-jian"></a><span class="count">1</span><a href="" class="addCount iconfont icon-jia"></a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <i class="checkBox iconfont icon-weigouxuan"></i>
+            <img src="/static/shoppingcar/sf-11.jpg" alt="">
+            <div class="witter">
+              <h4>【黑卡96折】Apple 苹果 iPhone 7（A1660）移动联通电信4G手机 国内行货</h4>
+              <div class="configuration">
+                <span>重量:3.3kg</span><span>颜色:标配版</span><span>版本:5.7英寸</span>
+              </div>
+              <div class="bottomChooseBox">
+                <span class="price">￥ 100.00</span>
+                <span class="countBox">
+                  <a href="" class="reduceCount iconfont icon-jian"></a><span class="count">1</span><a href="" class="addCount iconfont icon-jia"></a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <i class="checkBox iconfont icon-weigouxuan"></i>
+            <img src="/static/shoppingcar/sf-11.jpg" alt="">
+            <div class="witter">
+              <h4>【黑卡96折】Apple 苹果 iPhone 7（A1660）移动联通电信4G手机 国内行货</h4>
+              <div class="configuration">
+                <span>重量:3.3kg</span><span>颜色:标配版</span><span>版本:5.7英寸</span>
+              </div>
+              <div class="bottomChooseBox">
+                <span class="price">￥ 100.00</span>
+                <span class="countBox">
+                  <a href="" class="reduceCount iconfont icon-jian"></a><span class="count">1</span><a href="" class="addCount iconfont icon-jia"></a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div>
+            <i class="checkBox iconfont icon-weigouxuan"></i>
+            <img src="/static/shoppingcar/sf-11.jpg" alt="">
+            <div class="witter">
+              <h4>【黑卡96折】Apple 苹果 iPhone 7（A1660）移动联通电信4G手机 国内行货</h4>
+              <div class="configuration">
+                <span>重量:3.3kg</span><span>颜色:标配版</span><span>版本:5.7英寸</span>
+              </div>
+              <div class="bottomChooseBox">
+                <span class="price">￥ 100.00</span>
+                <span class="countBox">
+                  <a href="" class="reduceCount iconfont icon-jian"></a><span class="count">1</span><a href="" class="addCount iconfont icon-jia"></a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
     <div class="settlementBox">
       <i id="allCkecked" class="checkBox iconfont icon-weigouxuan"></i>
       <div class="countBox">
-        <span style="color: black;padd合计：ing-left: 10px">全选</span>
+        <span style="color: black;padding-left: 10px">全选</span>
         <span class="countResult">
-
+          合计：
           <i>0.00</i>
         </span>
       </div>
@@ -134,6 +228,80 @@ export default {
       background: #FF5E53;
       color: white;
       font-size: 32px;
+    }
+  }
+  .contentBox{
+    padding-top: 100px;
+    background: #f0f2f5;
+    li{
+      padding: 30px;
+      text-align: left;
+      margin-bottom: 20px;
+      background: #fff;
+      >div{
+        position: relative;
+      }
+      i{
+        position: absolute;
+        left: 0;
+        top: 45%;
+      }
+      img{
+        display: inline-block;
+        position: absolute;
+        left: 60px;
+        top: 0;
+        width: 160px;
+        height: 160px;
+      }
+      .witter{
+        display: inline-block;
+        width: 100%;
+        padding: 10px 10px;
+        padding-left: 260px;
+        box-sizing: border-box;
+        font-size: 0;
+        h4{
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          font-size: 24px;
+        }
+        .configuration {
+          color: #81838e;
+          span{
+            font-size: 24px;
+            line-height: 40px;
+          }
+        }
+        .bottomChooseBox{
+          position: relative;
+          .price{
+            color: #ff0000;
+            font-size: 32px;
+            line-height: 50px;
+          }
+          .countBox{
+            position: absolute;
+            top: 10px;
+            right: 0;
+            .count{
+              border-top: 1px solid #ccc;
+              border-bottom: 1px solid #ccc;
+              font-size: 24px;
+              padding: 7px 12px;
+              float: left;
+            }
+            .iconfont{
+              padding: 5px;
+              border: 1px solid #ccc;
+              font-size: 30px;
+              float: left;
+            }
+          }
+        }
+      }
     }
   }
   .checkBox{
