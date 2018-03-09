@@ -9,6 +9,8 @@ import shoppingCar from '@/components/api/shoppingCar'
 import myself from '@/components/api/myself'
 
 /*后台管理*/
+import backSign from '@/components/back/backSign'
+
 import backindex from '@/components/back/backindex'
 import backUser from '@/components/back/backUser'
 import user from '@/components/back/user'
@@ -46,6 +48,11 @@ export default new Router({
       ]
     },
     /*后台管理*/
+    {
+      path:'/backSign',
+      name: 'backSign',
+      component: backSign,
+    },
     {
       path: '/backindex',
       name: 'backindex',

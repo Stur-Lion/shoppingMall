@@ -19,7 +19,22 @@ router.beforeEach((to, from, next) => {
   if (to.matched.length ===0) {
     next('/api/index')
   } else {
-    next();
+    if(to.fullPath == '/backSign'){
+      if(store.state.session==''){
+        next();
+      }else{
+        next('/backindex')
+      }
+    }
+    if(store.state.session==''){
+      if(to.fullPath.indexOf('/api')==0){
+        next();
+      }else{
+        next('/backSign')
+      }
+    }else{
+      next();
+    }
   }
 });
 
@@ -28,6 +43,7 @@ new Vue({
   el: '#app',
   router,
   axios,
+  store,
   components: { App },
   template: '<App/>'
 })
