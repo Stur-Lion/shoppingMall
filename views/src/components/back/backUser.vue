@@ -2,24 +2,39 @@
 <template>
   <div class="dataBox">
     <div class="whiteBac">
+      <div class="operationGrounp">
+        <el-button type="primary">+ 添加</el-button>
+      </div>
       <template>
         <el-table
           :data="tableData"
           stripe
           style="width: 100%">
           <el-table-column
-            prop="date"
-            label="日期"
-            width="180">
+            prop="serial"
+            label="序号"
+            min-width="5%">
           </el-table-column>
           <el-table-column
             prop="name"
-            label="姓名"
-            width="180">
+            label="用户名"
+            min-width="15%">
           </el-table-column>
           <el-table-column
-            prop="address"
-            label="地址">
+            prop="accountNumber"
+            label="账号"
+            min-width="15%">
+          </el-table-column>
+          <el-table-column
+            prop="time"
+            label="注册时间"
+            min-width="20%">
+          </el-table-column>
+          <el-table-column label="操作" min-width="15%">
+            <template slot-scope="scope">
+              <el-button size="mini">修改密码</el-button>
+              <el-button size="mini" type="danger">删除</el-button>
+            </template>
           </el-table-column>
         </el-table>
       </template>
@@ -28,32 +43,20 @@
 </template>
 
 <script>
+  import store from '@/vuex/store'
   export default {
     name: 'backUser',
     data () {
       return {
         tableData: [{
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄'
-        }, {
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
+          serial : 1,
+          name: '管理员',
+          accountNumber: 'admin@shop.com',
+          time: '2018-03-09 09:51'
         }]
       }
     },
-    methods: {
-
-    }
+    store
   }
 </script>
 

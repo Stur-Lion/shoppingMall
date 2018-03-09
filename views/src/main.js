@@ -7,9 +7,12 @@ import './assets/icon/iconfont.css'
 import router from './router'
 import axios from '../node_modules/axios'
 import 'jquery'
+import store from '@/vuex/store'
 
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
+
+console.log(store);
 
 /*重定向路由*/
 router.beforeEach((to, from, next) => {
