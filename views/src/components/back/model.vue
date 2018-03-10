@@ -6,7 +6,9 @@
         <h4>确认</h4>
         <i class="iconfont icon-cha"></i>
       </div>
-      <div id="modelBody"></div>
+      <div id="modelBody">
+        <slot name="modelContent"></slot>
+      </div>
       <div id="modelfooter">
         <el-button>取消</el-button>
         <el-button type="primary">确认</el-button>

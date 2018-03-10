@@ -1,7 +1,14 @@
 <!--后台管理首页-->
 <template>
   <div style="height: 100%;">
-    <model>123123</model>
+    <model>
+      <div slot="modelContent">
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+        <p>123</p>
+      </div>
+    </model>
     <div class="topFullColumn"></div>
     <div id="mainContent">
       <div style="width: 100%;height: 100%;">
