@@ -2,59 +2,73 @@
 <template>
   <div id="fade" class="">
     <div class="model">
-
+      <div id="modelHeader">
+        <h4>确认</h4>
+        <i class="iconfont icon-cha"></i>
+      </div>
+      <div id="modelBody"></div>
+      <div id="modelfooter">
+        <el-button>取消</el-button>
+        <el-button type="primary">确认</el-button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'nodel',
+  name: 'model',
   data () {
     return {
 
     }
-  },
-  mounted () {
-    var index = $('.fixTab').attr('index')
-    $('.fixTab li').eq(index - 1).addClass('active').siblings('li').removeClass('active')
-  },
-  methods: {
-    toLink (e) {
-      var li = $(e.currentTarget)
-      this.$router.push(li.attr('linkRouter'))
-    }
-  },
-  props: ['index']
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" type="text/scss" scoped>
-.fixTab{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  font-size: 0;
-  background-color: rgb(254, 254, 254);
-  padding: 10px 0 0 0;
-  border-top: 1px solid rgba(188, 188, 188, 0.54);
-  text-align: center;
-  li{
-    display: inline-block;
-    width: 25%;
-    font-size: 12px;
-    &.active{
-      color: red;
-    }
-    i{
+  #fade{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.27);
+    .model{
       display: block;
-      font-size: 45px;
-    }
-    p{
-      line-height: 40px;
+      margin: 100px auto;
+      background: #fff;
+      width: 800px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px 0 rgba(0,0,0,.5);
+      #modelHeader{
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+        line-height: 60px;
+        position: relative;
+        i{
+          position: absolute;
+          right: 10px;
+          top: 0;
+          cursor: pointer;
+          width: 40px;
+          height: 100%;
+          text-align: center;
+        }
+      }
+      #modelBody{
+        padding: 30px 0;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      #modelfooter{
+        text-align: center;
+        padding: 15px 0;
+        button{
+          margin: 0 20px;
+        }
+      }
     }
   }
-}
 </style>

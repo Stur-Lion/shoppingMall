@@ -1,6 +1,7 @@
 <!--后台管理首页-->
 <template>
   <div style="height: 100%;">
+    <model>123123</model>
     <div class="topFullColumn"></div>
     <div id="mainContent">
       <div style="width: 100%;height: 100%;">
@@ -43,6 +44,7 @@
   import Vue from 'vue'
   import ElementUI from 'element-ui';
   import 'element-ui/lib/theme-chalk/index.css';
+  import model from './model';
   Vue.use(ElementUI)
   export default {
     name: 'backindex',
@@ -62,6 +64,9 @@
       $('.el-menu-item').on('click',function () {
         that.$router.push({path:$(this).attr('path')})
       })
+    },
+    components:{
+      model
     }
   }
 </script>
