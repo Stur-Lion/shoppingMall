@@ -3,12 +3,11 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 Vue.use(Vuex);
 const state={
-  session:''
+  session:'1'
 }
 
 const mutations = {
   changeSession(session){
-    console.log(1);
     if(session){
       state.session = session
     }else {

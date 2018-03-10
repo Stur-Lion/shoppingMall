@@ -3,7 +3,7 @@
   <div class="dataBox">
     <div class="whiteBac">
       <div class="operationGrounp">
-        <el-button type="primary">+ 添加</el-button>
+        <el-button type="primary" @click="demo()">+ 添加</el-button>
       </div>
       <template>
         <el-table
@@ -54,6 +54,11 @@
           accountNumber: 'admin@shop.com',
           time: '2018-03-09 09:51'
         }]
+      }
+    },
+    methods:{
+      demo(){
+        this.common.demo()
       }
     },
     store

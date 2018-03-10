@@ -8,9 +8,11 @@ import router from './router'
 import axios from '../node_modules/axios'
 import 'jquery'
 import store from '@/vuex/store'
+import common from '@/assets/js/common'
 
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
+Vue.prototype.common = common
 
 console.log(store);
 
