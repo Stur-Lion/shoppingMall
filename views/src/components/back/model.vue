@@ -11,7 +11,7 @@
       </div>
       <div id="modelfooter">
         <el-button @click="closeModel">取消</el-button>
-        <el-button type="primary">确认</el-button>
+        <el-button type="primary" class="btnPrimary">确认</el-button>
       </div>
     </div>
   </div>

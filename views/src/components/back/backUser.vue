@@ -75,7 +75,24 @@
     },
     methods:{
       addBackuser(){
-        this.common.showModel('#addBackuser','添加')
+        var that = this;
+        this.common.showModel('#addBackuser','添加');
+        $('.btnPrimary').off('click').on('click',function () {
+          if(that.form.name==''||that.form.password==''){
+            return
+          }
+          that.axios.post('/addBackuser', {
+            name: that.form.name,
+            password: that.form.password,
+            time:that.common.getTime()
+          })
+            .then(function (res) {
+              console.log(res.data);
+            })
+            .catch(function (error) {
+              console.log(error);
+            })
+        })
       }
     },
     components:{

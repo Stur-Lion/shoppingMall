@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/shop');
 
@@ -8,4 +8,4 @@ db.once('open', function() {
     console.log('连接成功');
 });
 
-module.default = mongoose;
+module.exports = mongoose;
