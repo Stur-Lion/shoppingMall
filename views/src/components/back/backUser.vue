@@ -3,7 +3,7 @@
   <div class="dataBox">
     <div class="whiteBac">
       <div class="operationGrounp">
-        <el-button type="primary" @click="demo()">+ 添加</el-button>
+        <el-button type="primary" @click="addBackuser">+ 添加</el-button>
       </div>
       <template>
         <el-table
@@ -39,11 +39,24 @@
         </el-table>
       </template>
     </div>
+    <model>
+      <div slot="modelContent">
+        <el-form ref="form" :model="form" label-width="80px" class="modelForm" id="addBackuser">
+          <el-form-item label="邮箱：">
+            <el-input v-model="form.name"></el-input>
+          </el-form-item>
+          <el-form-item label="密码：">
+            <el-input v-model="form.password"></el-input>
+          </el-form-item>
+        </el-form>
+      </div>
+    </model>
   </div>
 </template>
 
 <script>
-  import store from '@/vuex/store'
+  import store from '@/vuex/store';
+  import model from './model';
   export default {
     name: 'backUser',
     data () {
@@ -53,13 +66,20 @@
           name: '管理员',
           accountNumber: 'admin@shop.com',
           time: '2018-03-09 09:51'
-        }]
+        }],
+        form: {
+          name: '',
+          password: ''
+        }
       }
     },
     methods:{
-      demo(){
-        this.common.demo()
+      addBackuser(){
+        this.common.showModel('#addBackuser','添加')
       }
+    },
+    components:{
+      model
     },
     store
   }

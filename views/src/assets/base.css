@@ -40,3 +40,9 @@ input{
 button.el-button{
   margin-bottom: 5px;
 }
+
+/*模态框样式*/
+.modelForm{
+  width: 65%;
+  margin: 0 auto;
+}

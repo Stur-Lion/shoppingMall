@@ -1,16 +1,16 @@
 <!--底部导航-->
 <template>
-  <div id="fade" class="">
+  <div id="fade" @click="backgroundClick($event)">
     <div class="model">
       <div id="modelHeader">
         <h4>确认</h4>
-        <i class="iconfont icon-cha"></i>
+        <i class="iconfont icon-cha" @click="closeModel"></i>
       </div>
       <div id="modelBody">
         <slot name="modelContent"></slot>
       </div>
       <div id="modelfooter">
-        <el-button>取消</el-button>
+        <el-button @click="closeModel">取消</el-button>
         <el-button type="primary">确认</el-button>
       </div>
     </div>
@@ -24,6 +24,17 @@ export default {
     return {
 
     }
+  },
+  methods:{
+    closeModel(){
+      $('#fade').fadeOut();
+      $('#fade .model').fadeOut();
+    },
+    backgroundClick(event){
+      if(event.target == $('#fade')[0]){
+        this.closeModel()
+      }
+    }
   }
 }
 </script>
@@ -32,13 +43,16 @@ export default {
 <style lang="scss" type="text/scss" scoped>
   #fade{
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     z-index: 1000;
     background: rgba(0, 0, 0, 0.27);
+    display: none;
     .model{
-      display: block;
-      margin: 100px auto;
+      display: none;
+      margin: 150px auto;
       background: #fff;
       width: 800px;
       border-radius: 5px;
@@ -63,6 +77,9 @@ export default {
         padding: 30px 0;
         border-top: 1px solid #e5e5e5;
         border-bottom: 1px solid #e5e5e5;
+        .modelForm{
+          display: none;
+        }
       }
       #modelfooter{
         text-align: center;
