@@ -88,6 +88,7 @@
           })
             .then(function (res) {
               console.log(res.data);
+              //that.tableData =
             })
             .catch(function (error) {
               console.log(error);

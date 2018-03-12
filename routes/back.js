@@ -21,21 +21,22 @@ router.post('/signBack', async (ctx, next) => {
 router.post('/addBackuser', async (ctx ,next) =>{
     var query = ctx.request.body;
     console.log(query);
-    await backUserSchema.getUserInfo({
-        account:query.name,
-    })
-    await backUserSchema.addOne({
+    backUserSchema.addOne({
         account:query.name,
         password:query.password,
         time:query.time,
         level:1,
+    }).then(function (res) {
+        console.log(res);
+        return backUserSchema.getList(0)
+    }).then(function (data) {
+        console.log(data);
+        ctx.body = {
+            info:['添加成功'],
+            code:1,
+            data:{}
+        }
     })
-    console.log('添加');
-    ctx.body = {
-        info:['添加成功'],
-        code:1,
-        data:{}
-    }
 })
 
 module.exports = router
