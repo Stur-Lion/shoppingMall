@@ -1,4 +1,5 @@
 const router = require('koa-router')();
+const multer = require('koa-multer');
 const backUserSchema = require('../model/backUserSchema');
 
 /*登录*/
@@ -37,6 +38,22 @@ router.post('/addBackuser', async (ctx ,next) =>{
             data:{}
         }
     })
+})
+
+
+
+
+
+//文件上传
+//加载配置
+const upload = multer({ dest: 'uploads/' });
+/*上传照片*/
+router.post('/uploadFile', upload.single('avatar'), async (ctx ,next) =>{
+    console.log('1111111111111');
+    console.log(ctx.req.file.filename);
+    ctx.body = {
+        filename: ctx.req.file.filename//返回文件名
+    }
 })
 
 module.exports = router

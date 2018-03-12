@@ -14,6 +14,7 @@ import backSign from '@/components/back/backSign'
 import backindex from '@/components/back/backindex'
 import backUser from '@/components/back/backUser'
 import user from '@/components/back/user'
+import banner from '@/components/back/indexManage/banner'
 
 Vue.use(Router)
 
@@ -29,18 +30,15 @@ export default new Router({
           path: 'index',
           name: 'index',
           component: index
-        },
-        {
+        }, {
           path: 'classification',
           name: 'classification',
           component: classification
-        },
-        {
+        }, {
           path: 'shoppingCar',
           name: 'shoppingCar',
           component: shoppingCar
-        },
-        {
+        }, {
           path: 'myself',
           name: 'myself',
           component: myself
@@ -62,11 +60,14 @@ export default new Router({
           name: 'backUser',
           path: 'backUser',
           component: backUser,
-        },
-        {
+        }, {
           name: 'user',
           path: 'user',
           component: user,
+        }, {
+          path: 'banner',
+          name: 'banner',
+          component: banner
         }
       ]
     }
